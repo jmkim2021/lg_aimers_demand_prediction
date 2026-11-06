@@ -38,6 +38,4 @@ jupyter notebook lg_aimers_demand_prediction.ipynb
 - `FileNotFoundError`가 나면 노트북의 `BASE_DIR`과 위 세 데이터 경로를 확인합니다.
 - LightGBM 설치가 실패하면 사용 중인 Python 환경에 `requirements.txt`가 설치됐는지 확인합니다.
 
-## 문의·라이선스·변경 이력
-
-질문이나 오류는 [GitHub Issues](https://github.com/jmkim2021/lg_aimers_demand_prediction/issues)에 남길 수 있습니다. 이 저장소에는 별도 코드 라이선스가 명시되어 있지 않으며, 대회 데이터도 포함하지 않았습니다. 변경 내역은 [커밋 기록](https://github.com/jmkim2021/lg_aimers_demand_prediction/commits/main)에서 확인할 수 있습니다.
+문의: jmkim020315@gmail.com
