@@ -14,7 +14,7 @@
 4. 날짜를 기준으로 과거 학습 구간과 최근 30일 검증 구간을 나눴습니다. 검증용 SMAPE는 방향 확인에 사용했으며 대회 평가값과 동일하다고 보지는 않았습니다.
 5. 최종 예측을 모델 60%, 전주 같은 요일 판매량 30%, 28일 내 같은 요일 평균 10%로 결합했습니다. 희소 구간에서 단순 기준선도 함께 반영하기 위한 선택입니다.
 
-## 저장소 구성과 실행
+## 저장소 구성과 실행 조건
 
 - `lg_aimers_demand_prediction.ipynb`: 피처 생성, 7개 모델 학습, 검증, 추론
 - `requirements.txt`: 실행 의존성
@@ -28,3 +28,16 @@ jupyter notebook lg_aimers_demand_prediction.ipynb
 ```
 
 대회 데이터는 배포 조건 때문에 저장소에 포함하지 않았습니다. 재실행하려면 노트북 상단의 `BASE_DIR`을 로컬 데이터 위치로 바꿔야 합니다. 제출 파일만으로는 대회 공식 점수를 확인할 수 없어 README에 순위나 점수를 기재하지 않았습니다.
+
+## 사용 예시
+
+`BASE_DIR` 아래에 `train/train.csv`, `test/TEST_*.csv`, `sample_submission.csv`를 두고 노트북 셀을 순서대로 실행합니다. 노트북은 메뉴별 28일 판매 기록을 읽어 7일 예측을 채운 제출 CSV를 `BASE_DIR/lg_aimers_demand_prediction/`에 저장합니다.
+
+## 실행 중 문제가 생기면
+
+- `FileNotFoundError`가 나면 노트북의 `BASE_DIR`과 위 세 데이터 경로를 확인합니다.
+- LightGBM 설치가 실패하면 사용 중인 Python 환경에 `requirements.txt`가 설치됐는지 확인합니다.
+
+## 문의·라이선스·변경 이력
+
+질문이나 오류는 [GitHub Issues](https://github.com/jmkim2021/lg_aimers_demand_prediction/issues)에 남길 수 있습니다. 이 저장소에는 별도 코드 라이선스가 명시되어 있지 않으며, 대회 데이터도 포함하지 않았습니다. 변경 내역은 [커밋 기록](https://github.com/jmkim2021/lg_aimers_demand_prediction/commits/main)에서 확인할 수 있습니다.
